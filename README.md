@@ -83,6 +83,14 @@ as-is (see `vercel.json`). To deploy your own copy:
 npx vercel
 ```
 
+The page includes `@vercel/analytics` for basic page-view counts. It only
+reports anything once deployed on Vercel, and only after you turn on **Web
+Analytics** for the project in the Vercel dashboard (Project &rarr; Analytics
+&rarr; Enable) &mdash; free on the Hobby plan, viewable only in your own
+dashboard, nothing shown on the page itself. Custom event tracking (e.g.
+counting how often the budget calculator gets used) needs a paid Vercel plan,
+so it isn't wired up here.
+
 ## The data
 
 Toubia, O., Gui, G., Peng, T., Merlau, D., Li, A., & Chen, H. (2025). "Twin-2K-500:
