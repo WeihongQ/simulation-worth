@@ -74,12 +74,12 @@ function App() {
         <p className="citation">
           This demo is developed based on the method proposed by Broska,
           Howes &amp; van Loon (2025), &ldquo;The Mixed Subjects
-          Design,&rdquo; <em>Sociological Methods &amp; Research</em>{" "}
+          Design: Treating Large Language Models as Potentially Informative Observations,&rdquo; <em>Sociological Methods &amp; Research</em>{" "}
           54(3):1074&ndash;1109.
           <br />
           Data source: Twin-2K-500 (LLM-Digital-Twin, HuggingFace).
           <br />
-          This site is an independent, unofficial walkthrough of their idea
+          This site is an independent demo
           &mdash; not affiliated with the authors.
         </p>
       </header>
@@ -92,8 +92,10 @@ function App() {
       <footer className="page-footer">
         <p>
           Data: Twin-2K-500 (LLM-Digital-Twin, HuggingFace). Method: Broska,
-          Howes &amp; van Loon (2025), &ldquo;The Mixed Subjects
-          Design,&rdquo; <em>Sociological Methods &amp; Research</em> 54(3).
+          Howes &amp; van Loon (2025), &ldquo;The Mixed Subjects Design:
+          Treating Large Language Models as Potentially Informative
+          Observations,&rdquo; <em>Sociological Methods &amp; Research</em>{" "}
+          54(3).
         </p>
       </footer>
     </>

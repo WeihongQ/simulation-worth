@@ -86,8 +86,9 @@ npx vercel
 ## The method
 
 This demo implements the effective-sample-size framework from Broska, Howes &
-van Loon (2025), "The Mixed Subjects Design," *Sociological Methods &
-Research* 54(3):1074–1109 — prediction-powered inference (PPI) applied to
+van Loon (2025), "The Mixed Subjects Design: Treating Large Language Models
+as Potentially Informative Observations," *Sociological Methods & Research*
+54(3):1074–1109 — prediction-powered inference (PPI) applied to
 combining a small human-labeled sample with a large LLM-simulated one. The
 core identities:
 
