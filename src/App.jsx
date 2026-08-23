@@ -54,13 +54,16 @@ function App() {
         <h1>What is your LLM simulation actually worth?</h1>
         <p>
           LLM-simulated survey respondents (&ldquo;digital twins&rdquo;) are
-          cheap but not accurate. That leaves researchers with two bad
-          options: ignore simulation and pay to recruit everyone, or trust it
-          wholesale and risk a wrong answer. This demo takes the middle path
-          &mdash; use a small sample of real people to measure how far off
-          the simulation is, then combine the two. It shows how much your
-          simulation is actually worth, and, given a budget, how many real
-          respondents you still need to recruit.
+          cheap, but not always accurate. That leaves researchers with a
+          difficult tradeoff: recruit everyone and bear the full cost, or
+          rely on simulation and risk getting the answer wrong. This demo
+          takes a middle path &mdash; recruit a small sample of real
+          respondents to measure how far off the simulation is, and then use
+          that gap to correct the average from a large batch of simulations.
+          The more reliable the simulation is, the fewer real respondents are
+          needed to achieve the same precision. This allows the demo to show
+          how much your simulation is actually worth and, given a budget, how
+          many real respondents you still need to recruit.
         </p>
         <p className="citation">
           This demo is developed based on the method proposed by Broska,
