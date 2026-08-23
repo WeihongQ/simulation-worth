@@ -1,122 +1,94 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { useState } from "react";
+import twin2k from "./data/twin2k.json";
+import Tabs from "./components/Tabs.jsx";
+import Section1Comparison from "./components/Section1Comparison.jsx";
+import Section2Worth from "./components/Section2Worth.jsx";
+import Section3Domains from "./components/Section3Domains.jsx";
+import Section4Budget from "./components/Section4Budget.jsx";
+import Section5YourData from "./components/Section5YourData.jsx";
+import Assumptions from "./components/Assumptions.jsx";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [activeTab, setActiveTab] = useState("gap");
+  const [customDataset, setCustomDataset] = useState(null);
+
+  const usingCustomData = customDataset !== null;
+  const overall = customDataset?.overall ?? twin2k.overall;
+  const domains = customDataset?.domains ?? twin2k.domains;
+
+  const tabs = [
+    { id: "gap", label: "The gap", content: <Section1Comparison domains={twin2k.domains} /> },
+    {
+      id: "worth",
+      label: "What it's worth",
+      content: <Section2Worth overall={overall} usingCustomData={usingCustomData} />,
+    },
+    {
+      id: "trust",
+      label: "Where it fails",
+      content: <Section3Domains domains={domains} usingCustomData={usingCustomData} />,
+    },
+    {
+      id: "budget",
+      label: "Your budget",
+      content: <Section4Budget domains={domains} overall={overall} usingCustomData={usingCustomData} />,
+    },
+    {
+      id: "yours",
+      label: "Try your data",
+      content: (
+        <Section5YourData
+          onApply={setCustomDataset}
+          onReset={() => setCustomDataset(null)}
+          isActive={usingCustomData}
+        />
+      ),
+    },
+  ];
 
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+      <header className="page-header">
+        <p className="kicker">A demo of prediction-powered inference</p>
+        <h1>What is your LLM simulation actually worth?</h1>
+        <p>
+          LLM-simulated survey respondents (&ldquo;digital twins&rdquo;) are
+          cheap but not accurate. That leaves researchers with two bad
+          options: ignore simulation and pay to recruit everyone, or trust it
+          wholesale and risk a wrong answer. This demo takes the middle path
+          &mdash; use a small sample of real people to measure how far off
+          the simulation is, then combine the two. It shows how much your
+          simulation is actually worth, and, given a budget, how many real
+          respondents you still need to recruit.
+        </p>
+        <p className="citation">
+          This demo is developed based on the method proposed by Broska,
+          Howes &amp; van Loon (2025), &ldquo;The Mixed Subjects
+          Design,&rdquo; <em>Sociological Methods &amp; Research</em>{" "}
+          54(3):1074&ndash;1109.
+          <br />
+          Data source: Twin-2K-500 (LLM-Digital-Twin, HuggingFace).
+          <br />
+          This site is an independent, unofficial walkthrough of their idea
+          &mdash; not affiliated with the authors.
+        </p>
+      </header>
 
-      <div className="ticks"></div>
+      <main>
+        <Tabs tabs={tabs} active={activeTab} onChange={setActiveTab} />
+        <Assumptions />
+      </main>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+      <footer className="page-footer">
+        <p>
+          Data: Twin-2K-500 (LLM-Digital-Twin, HuggingFace). Method: Broska,
+          Howes &amp; van Loon (2025), &ldquo;The Mixed Subjects
+          Design,&rdquo; <em>Sociological Methods &amp; Research</em> 54(3).
+        </p>
+      </footer>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

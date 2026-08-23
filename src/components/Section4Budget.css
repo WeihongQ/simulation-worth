@@ -1,0 +1,57 @@
+.select-field {
+  display: block;
+  margin-bottom: 1.2em;
+}
+
+.select-field span {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.4em;
+}
+
+.select-field select {
+  font: inherit;
+  color: var(--text);
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.5em 0.7em;
+  width: 100%;
+  max-width: 320px;
+}
+
+.mode-toggle {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 3px;
+  margin-bottom: 1.5em;
+  gap: 3px;
+}
+
+.mode-toggle button {
+  font: inherit;
+  font-size: 0.85rem;
+  background: none;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5em 0.9em;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.mode-toggle button.active {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.budget-warning {
+  background: color-mix(in srgb, var(--bad) 12%, var(--bg-raised));
+  border-left: 3px solid var(--bad);
+  border-radius: 0 8px 8px 0;
+  padding: 0.8em 1em;
+  font-size: 0.9rem;
+  color: var(--text);
+  margin: 1em 0;
+}

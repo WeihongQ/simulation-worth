@@ -1,0 +1,39 @@
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+  margin: 1.5em 0;
+}
+
+@media (min-width: 560px) {
+  .stat-row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stat-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1em;
+}
+
+.stat-tile-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.stat-tile-value {
+  font-family: var(--sans);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.stat-tile-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}

@@ -1,0 +1,23 @@
+.hero-stat {
+  text-align: center;
+  padding: 1.5em 1em;
+  margin: 1.2em 0;
+}
+
+.hero-stat-value {
+  font-family: var(--sans);
+  font-size: clamp(1.7rem, 5vw, 2.6rem);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.25;
+}
+
+.hero-stat-value strong {
+  color: var(--accent);
+}
+
+.hero-stat-caption {
+  margin-top: 0.6em;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}

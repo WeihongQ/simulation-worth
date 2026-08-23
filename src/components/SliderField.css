@@ -1,0 +1,41 @@
+.slider-field {
+  display: block;
+  margin-bottom: 1.1em;
+}
+
+.slider-field-label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.4em;
+}
+
+.slider-field-row {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.slider-field-row input[type="range"] {
+  flex: 1;
+  accent-color: var(--accent);
+}
+
+.slider-field-number {
+  display: flex;
+  align-items: center;
+  gap: 0.2em;
+  font-size: 0.9rem;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.slider-field-number input[type="number"] {
+  width: 5.5em;
+  font: inherit;
+  color: var(--text);
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.3em 0.5em;
+}

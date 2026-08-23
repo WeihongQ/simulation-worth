@@ -1,0 +1,44 @@
+.math-block {
+  margin: 1.2em 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-raised);
+}
+
+.math-block summary {
+  cursor: pointer;
+  padding: 0.6em 1em;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  user-select: none;
+}
+
+.math-block summary:hover {
+  color: var(--text);
+}
+
+.math-block-body {
+  padding: 0.2em 1.2em 1.2em;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  overflow-x: auto;
+}
+
+.math-block-body p {
+  margin: 0.9em 0;
+}
+
+.math-block-body code {
+  font-size: 0.85em;
+}
+
+.formula {
+  margin: 0.7em 0;
+  overflow-x: auto;
+  color: var(--text);
+}
+
+.formula .katex {
+  font-size: 1.05em;
+}

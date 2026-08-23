@@ -96,12 +96,30 @@ DOMAIN_LABELS = {
 }
 
 DOMAIN_DESCRIPTIONS = {
-    "consumer_choice": "Would you buy this product at this price? 40 everyday product categories.",
-    "risk_framing": "Classic gain/loss framing, outcome bias, and proportion-dominance judgments about risky decisions.",
-    "probability_estimation": "Base-rate estimates and probability-matching-vs-maximizing choice trials.",
-    "anchoring_estimation": "Numeric estimates (country counts, tree height) after being shown a low or high anchor.",
-    "consistency_judgments": "Conjunction fallacy, sunk cost, WTA/WTP, and Allais-paradox choices that classically violate strict rational-choice axioms.",
-    "self_referential_bias": "False-consensus effect (self & others) and benefit/risk ratings of everyday technologies.",
+    "consumer_choice": "For 40 everyday products (cereal, batteries, soda...), would you actually buy "
+                       "this item at this price? The dots show how often real shoppers said yes, "
+                       "versus how often the AI guessed they would.",
+    "risk_framing": "Classic decision puzzles where the same choice is described in different ways -- "
+                    "like whether saving 200 people for certain feels different from a 1-in-3 chance "
+                    "of saving everyone, even though the underlying odds are identical. The dots show "
+                    "how strongly people leaned toward the \"safe\" option, real vs. simulated.",
+    "probability_estimation": "How well people judge odds and randomness -- like guessing whether a "
+                              "stranger's profile sounds more like an engineer's or a lawyer's, or "
+                              "predicting which color a die is more likely to land on. The dots show "
+                              "how often people picked the mathematically correct answer.",
+    "anchoring_estimation": "Before guessing something they don't actually know -- how many African "
+                            "countries are in the UN, how tall the tallest redwood is -- people were "
+                            "first shown a number designed to bias them too low or too high. The dots "
+                            "compare real and simulated guesses as a ratio to the real average "
+                            "(1.00x = exactly average; not a percentage).",
+    "consistency_judgments": "Choices that basic economics says should be consistent but often aren't "
+                             "-- like sticking with a bad deal because you already paid for it, or "
+                             "picking a guaranteed $1 million over a slightly-better bet. The dots show "
+                             "how often people made the \"inconsistent\" choice, real vs. simulated.",
+    "self_referential_bias": "How much people assume everyone else thinks and acts like they do, plus "
+                             "how risky or beneficial they rate everyday technology (self-driving cars, "
+                             "facial recognition, and so on). The dots show the average rating, real "
+                             "vs. simulated.",
 }
 
 # QuestionID -> domain. QIDs not listed here (QID163, QID165, QID167, QID169)
@@ -283,6 +301,15 @@ def main():
             "var_diff": var_or_none(diff),
             "corr": pearson_or_nan(y, f),
             "items": sorted(item_rows, key=lambda r: r["id"]),
+            # Per-respondent composite scores (mean of that person's items in
+            # this domain), the same numbers "corr" above is computed from.
+            # Exported so the UI can scatter-plot points that are actually
+            # consistent with corr/n_eff, rather than the coarser per-item
+            # means (which can look more or less scattered than corr implies,
+            # since averaging over ~2000 respondents per item hides
+            # person-level disagreement that per-item means never show).
+            "respondent_human": [round(v, 4) for v in y.tolist()],
+            "respondent_sim": [round(v, 4) for v in f.tolist()],
         })
 
     # Overall headline figure (section 2): same composite-and-pool method as

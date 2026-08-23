@@ -1,0 +1,95 @@
+.data-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+  flex-wrap: wrap;
+  background: var(--accent-bg);
+  border-radius: 8px;
+  padding: 0.7em 1em;
+  font-size: 0.9rem;
+  margin-bottom: 1.2em;
+}
+
+.data-banner button {
+  font: inherit;
+  font-size: 0.85rem;
+  background: none;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: 6px;
+  padding: 0.3em 0.7em;
+  cursor: pointer;
+}
+
+.csv-label {
+  display: block;
+  margin-bottom: 1em;
+}
+
+.csv-label span {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5em;
+}
+
+.csv-label textarea {
+  width: 100%;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--text);
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.8em;
+  resize: vertical;
+}
+
+.csv-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8em;
+  margin-bottom: 1em;
+}
+
+.csv-controls button {
+  font: inherit;
+  font-size: 0.88rem;
+  border-radius: 6px;
+  padding: 0.55em 1em;
+  cursor: pointer;
+  border: 1px solid var(--border);
+}
+
+.csv-controls button[type="submit"] {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+  font-weight: 600;
+  margin-left: auto;
+}
+
+.csv-controls button.secondary {
+  background: var(--bg-raised);
+  color: var(--text);
+}
+
+.data-error {
+  color: var(--bad);
+  font-size: 0.9rem;
+  background: color-mix(in srgb, var(--bad) 12%, var(--bg-raised));
+  border-left: 3px solid var(--bad);
+  border-radius: 0 8px 8px 0;
+  padding: 0.7em 1em;
+}
+
+.data-warnings {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  padding-left: 1.2em;
+}
+
+.data-success {
+  color: var(--good);
+  font-size: 0.9rem;
+}

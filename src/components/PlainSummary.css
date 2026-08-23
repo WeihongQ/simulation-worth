@@ -1,0 +1,23 @@
+.plain-summary {
+  background: var(--accent-bg);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  padding: 0.9em 1.1em;
+  margin: 0.5em 0 1.5em;
+}
+
+.plain-summary-label {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 0.35em;
+}
+
+.plain-summary p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text);
+}
