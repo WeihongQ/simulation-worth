@@ -83,6 +83,15 @@ as-is (see `vercel.json`). To deploy your own copy:
 npx vercel
 ```
 
+## The data
+
+Toubia, O., Gui, G., Peng, T., Merlau, D., Li, A., & Chen, H. (2025). "Twin-2K-500:
+A Dataset for Building Digital Twins of over 2,000 People Based on Their
+Answers to over 500 Questions." *Marketing Science*.
+[DOI](https://pubsonline.informs.org/doi/10.1287/mksc.2025.0262) &middot;
+[arXiv](https://arxiv.org/abs/2505.17479) &middot;
+[dataset](https://huggingface.co/datasets/LLM-Digital-Twin/Twin-2K-500).
+
 ## The method
 
 This demo implements the effective-sample-size framework from Broska, Howes &

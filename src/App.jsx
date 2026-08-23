@@ -77,7 +77,10 @@ function App() {
           Design: Treating Large Language Models as Potentially Informative Observations,&rdquo; <em>Sociological Methods &amp; Research</em>{" "}
           54(3):1074&ndash;1109.
           <br />
-          Data source: Twin-2K-500 (LLM-Digital-Twin, HuggingFace).
+          Data source: Toubia, Gui, Peng, Merlau, Li &amp; Chen (2025),
+          &ldquo;Twin-2K-500: A Dataset for Building Digital Twins of over
+          2,000 People Based on Their Answers to over 500 Questions,&rdquo;{" "}
+          <em>Marketing Science</em> (via LLM-Digital-Twin on HuggingFace).
           <br />
           This site is an independent demo
           &mdash; not affiliated with the authors.
@@ -91,11 +94,14 @@ function App() {
 
       <footer className="page-footer">
         <p>
-          Data: Twin-2K-500 (LLM-Digital-Twin, HuggingFace). Method: Broska,
-          Howes &amp; van Loon (2025), &ldquo;The Mixed Subjects Design:
-          Treating Large Language Models as Potentially Informative
-          Observations,&rdquo; <em>Sociological Methods &amp; Research</em>{" "}
-          54(3).
+          Data: Toubia, Gui, Peng, Merlau, Li &amp; Chen (2025),
+          &ldquo;Twin-2K-500: A Dataset for Building Digital Twins of over
+          2,000 People Based on Their Answers to over 500 Questions,&rdquo;{" "}
+          <em>Marketing Science</em> (via LLM-Digital-Twin, HuggingFace).
+          Method: Broska, Howes &amp; van Loon (2025), &ldquo;The Mixed
+          Subjects Design: Treating Large Language Models as Potentially
+          Informative Observations,&rdquo;{" "}
+          <em>Sociological Methods &amp; Research</em> 54(3).
         </p>
       </footer>
     </>
