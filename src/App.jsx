@@ -52,6 +52,12 @@ function App() {
       <header className="page-header">
         <p className="kicker">A demo of prediction-powered inference</p>
         <h1>What is your LLM simulation actually worth?</h1>
+        <p className="byline">
+          by <strong>Weihong Qi</strong>, Ph.D. &middot;{" "}
+          <a href="https://github.com/WeihongQ" target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+        </p>
         <p>
           LLM-simulated survey respondents (&ldquo;digital twins&rdquo;) are
           cheap, but not always accurate. That leaves researchers with a
