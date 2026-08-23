@@ -9,10 +9,11 @@ export default function Section1Comparison({ domains }) {
       <PlainSummary>
         We asked 2,058 real people a bunch of survey questions. We also had an
         AI pretend to be each of those same people and guess how they'd
-        answer. Below, each dot is one survey question: its left/right
-        position is the real answer, its up/down position is the AI's guess.
-        A dot sitting on the dashed line means the AI matched humans exactly;
-        the farther a dot drifts from that line, the bigger the AI's miss.
+        answer. Below, each dot is one person: its left/right position is
+        their real average answer, its up/down position is the AI's average
+        guess for them. A dot sitting on the dashed line means the AI matched
+        that person exactly; the farther a dot drifts from that line, the
+        bigger the AI's miss.
       </PlainSummary>
 
       <div className="domain-grid">
